@@ -10,9 +10,6 @@ import Spring
 
 
 class SpringBallViewController: UIViewController {
-        
-    private var currentBall: SpringBall!
-    private var nextBall: SpringBall!
     
     @IBOutlet var ballSpringImage: SpringImageView!
     
@@ -30,13 +27,11 @@ class SpringBallViewController: UIViewController {
     @IBOutlet var delayNextLabel: UILabel!
     @IBOutlet var rotateNextLabel: UILabel!
     
+    private var currentBall: SpringBall!
+    private var nextBall: SpringBall!
     
-    @IBAction func runAnimationButtonClick() {
-        nextBall = SpringBall.getRandomSettings()
-        updateLabels()
-        animateBall()
-    }
     
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         currentBall = SpringBall.getRandomSettings()
@@ -44,7 +39,15 @@ class SpringBallViewController: UIViewController {
         updateLabels()
         animateBall()
     }
+    
+    // MARK: - IB Actions
+    @IBAction func runAnimationButtonClick() {
+        nextBall = SpringBall.getRandomSettings()
+        updateLabels()
+        animateBall()
+    }
 
+    // MARK: - Private methods
     private func updateLabels() {
         animationCurrentLabel.text = currentBall.animation
         curveCurrentLabel.text = currentBall.curve
