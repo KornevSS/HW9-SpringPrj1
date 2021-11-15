@@ -5,9 +5,9 @@
 //  Created by Сергей Корнев on 26.02.2021.
 //
 
-import Spring
+import UIKit
 
-class DataManager {
+class AnimationManager {
 
     let animation: String
     let curve: String

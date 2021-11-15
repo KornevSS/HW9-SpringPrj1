@@ -5,24 +5,26 @@
 //  Created by Сергей Корнев on 26.02.2021.
 //
 
-import Spring
+import UIKit
 
 struct SpringBall {
     
-    var animation: String
-    var curve: String
+    let animation: String
+    let curve: String
     
-    var force: CGFloat
-    var duration: CGFloat
-    var delay: CGFloat
-    var rotate: CGFloat
+    let force: CGFloat
+    let duration: CGFloat
+    let delay: CGFloat
+    let rotate: CGFloat
+    
+    
     
 }
 
 extension SpringBall {
     
     static func getRandomSettings() -> SpringBall {
-        let springBallSettings = DataManager()
+        let springBallSettings = AnimationManager()
         return SpringBall(
             animation: springBallSettings.animation,
             curve: springBallSettings.curve,
